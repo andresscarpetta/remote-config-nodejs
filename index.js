@@ -3,7 +3,7 @@ const AWS = require('aws-sdk');
 AWS.config.update({region: "us-west-2"});
 var client = new AWS.Lambda({region: "us-west-2"});
 
-let getConfigKey = (key, callback) => {
+exports.getConfigKey = (key, callback) => {
   let reqPayload = {
     key: key
   };
