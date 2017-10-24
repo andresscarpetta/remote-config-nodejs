@@ -7,7 +7,7 @@ exports.getConfigKey = (key, callback) => {
   let reqPayload = {
     key: key
   };
-  const env = process.env.MERCADONI_API_ENV;
+  const env = process.env.ENV;
   if (env) {
     reqPayload.env = env;
   }
