@@ -1,29 +1,29 @@
-import * as AWS from 'aws-sdk';
+const AWS = require('aws-sdk');
 
 AWS.config.update({region: "us-west-2"});
 var client = new AWS.Lambda({region: "us-west-2"});
 
-export function getConfigKey(key) {
-  let payload = {
+let getConfigKey = (key, callback) => {
+  let reqPayload = {
     key: key
   };
   const env = process.env.MERCADONI_API_ENV;
   if (env) {
-    payload.env = env;
+    reqPayload.env = env;
   }
 
   let reqParams = {
     FunctionName: "remote-config",
-    InvocationType: RequestResponse,
-    Payload: payload
+    InvocationType: "RequestResponse",
+    Payload: JSON.stringify(reqPayload)
   };
   client.invoke(reqParams, (err, data) => {
     if (err) {
-      return err;
+      callback(err);
     }
     else {
       const response = JSON.parse(data.Payload);
-      return response.value;
+      callback(null, response.value);
     }
   });
-}
+};
