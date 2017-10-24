@@ -1,0 +1,22 @@
+{
+  "name": "remote-config-nodejs",
+  "version": "0.1.0",
+  "description": "This module allows remote access to authentication credentials of an application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andresscarpetta/remote-config-nodejs.git"
+  },
+  "author": "Andres Scarpetta",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andresscarpetta/remote-config-nodejs/issues"
+  },
+  "homepage": "https://github.com/andresscarpetta/remote-config-nodejs#readme",
+  "dependencies": {
+    "aws-sdk": "^2.140.0"
+  }
+}

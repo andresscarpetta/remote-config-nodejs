@@ -1,0 +1,8 @@
+{
+  "esversion": 6,
+  "indent": 2,
+  "camelcase": true,
+  "node": true,
+  "mocha": true,
+  "unused": "vars"
+}
